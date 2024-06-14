@@ -12,4 +12,8 @@ export_presets.cfg
 
 android/
 
+# Directory for expiriments and unincorporated assets
 _TEMP_
+
+# Addons is super big, no need to check it in
+addons/
