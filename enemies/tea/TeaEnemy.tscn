@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwkvk56skkqlh"]
+
+[ext_resource type="Script" path="res://enemies/tea/TeaEnemy.gd" id="1_n83oa"]
+[ext_resource type="Resource" uid="uid://b08vqd3kgs6i1" path="res://enemies/tea/tea-loot-table.tres" id="2_2yhjr"]
+[ext_resource type="PackedScene" uid="uid://cm3nmtfe777q" path="res://enemies/HealthBar.tscn" id="2_cnc4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f673"]
+albedo_color = Color(0.458752, 0.327542, 0.221454, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kroiv"]
+material = SubResource("StandardMaterial3D_0f673")
+top_radius = 0.3
+bottom_radius = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_35fo3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xkyh7"]
+radius = 0.287663
+height = 1.87202
+
+[node name="TeaEnemy" type="CharacterBody3D"]
+script = ExtResource("1_n83oa")
+lootTable = ExtResource("2_2yhjr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.969471, -0.245206, 0, 0.245206, 0.969471, 0, 1.05802, 0.0552191)
+mesh = SubResource("CylinderMesh_kroiv")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00181, 0)
+shape = SubResource("CapsuleShape3D_35fo3")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_cnc4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41176, 0)
+
+[node name="Hitbox" type="Area3D" parent="." groups=["damageable"]]
+transform = Transform3D(0.990547, -0.116635, 0.0721961, 0.126293, 0.980867, -0.148153, -0.053535, 0.155871, 0.986326, 0.0773094, 0.120654, -0.121048)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(0.989913, 0.0318017, 0.138064, -0.00399546, 0.980361, -0.197169, -0.141623, 0.194629, 0.970599, -0.00307542, 1.04451, 0.0372063)
+shape = SubResource("CapsuleShape3D_xkyh7")

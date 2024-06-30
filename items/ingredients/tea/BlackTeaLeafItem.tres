@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bfvucrbj5r3qw"]
+
+[ext_resource type="Texture2D" uid="uid://c1u8ywg3r5qb2" path="res://items/ingredients/tea/black-tea-leaves.png" id="1_4jihw"]
+[ext_resource type="Script" path="res://items/Item.gd" id="2_g3cjw"]
+[ext_resource type="Resource" uid="uid://i45l704du0wd" path="res://items/recipes/ingredients/tea/BlackTeaLeavesRecipe.tres" id="2_thu6m"]
+
+[resource]
+script = ExtResource("2_g3cjw")
+name = "Black Tea Leaves"
+id = "ITEM_TEA_LEAF_BLACK"
+inventory_image = ExtResource("1_4jihw")
+recipe = ExtResource("2_thu6m")
+lootableScene = "res://loot/ingredients/tea/TeaLoot.tscn"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d3qy1nckrxygc"]
+
+[ext_resource type="Texture2D" uid="uid://ciaglw5wem4fp" path="res://items/ingredients/sugar/sugar-cane.png" id="1_gr5lc"]
+[ext_resource type="Script" path="res://items/Item.gd" id="1_lghf1"]
+
+[resource]
+script = ExtResource("1_lghf1")
+name = "Sugar"
+id = "ITEM_SUGAR"
+inventory_image = ExtResource("1_gr5lc")
+lootableScene = "res://loot/ingredients/sugar/SugarLoot.tscn"

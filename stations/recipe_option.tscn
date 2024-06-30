@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx2sjbla64oj1"]
+
+[ext_resource type="Script" path="res://stations/recipe_option.gd" id="1_fihqu"]
+[ext_resource type="Texture2D" uid="uid://qimam1qsutum" path="res://loot/missing-image.png" id="1_ya0h5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bqlv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="RecipeOption" type="Panel"]
+custom_minimum_size = Vector2(150, 170)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2bqlv")
+script = ExtResource("1_fihqu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 160)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_ya0h5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 22
+text = "Green Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1

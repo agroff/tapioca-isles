@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cycx82ptxg8k1"]
+
+[ext_resource type="Script" path="res://items/Item.gd" id="1_0g1sg"]
+[ext_resource type="Texture2D" uid="uid://2ya0w7mpdiye" path="res://items/drinks/black-tea.png" id="1_sgnfj"]
+[ext_resource type="Resource" uid="uid://unaqwqkqgcvk" path="res://items/recipes/BlackTeaRecipe.tres" id="2_xtxe8"]
+
+[resource]
+script = ExtResource("1_0g1sg")
+name = "Black Tea"
+id = "DRINK_TEA_BLACK"
+inventory_image = ExtResource("1_sgnfj")
+recipe = ExtResource("2_xtxe8")
+lootableScene = null

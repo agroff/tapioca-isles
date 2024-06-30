@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c2yjd14nx7fhp"]
+
+[ext_resource type="Script" path="res://items/Item.gd" id="1_6h4lg"]
+[ext_resource type="Texture2D" uid="uid://chusrecfgthjw" path="res://items/ingredients/tea/tea-leaves.png" id="1_sd0a5"]
+
+[resource]
+script = ExtResource("1_6h4lg")
+name = "Tea Leaves"
+id = "ITEM_TEA_LEAF"
+inventory_image = ExtResource("1_sd0a5")
+lootableScene = "res://loot/ingredients/tea/TeaLoot.tscn"

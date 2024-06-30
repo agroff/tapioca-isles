@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ckjwd6cyiy2kr"]
+
+[ext_resource type="FontFile" uid="uid://ci6doc7l8p57e" path="res://assets/fonts/Voltaire-Regular.ttf" id="1_dvcmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o37o"]
+bg_color = Color(0.41092, 0.626783, 0.78802, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+default_font = ExtResource("1_dvcmq")
+default_font_size = 22
+MarginContainer/constants/margin_bottom = 6
+MarginContainer/constants/margin_left = 6
+MarginContainer/constants/margin_right = 6
+MarginContainer/constants/margin_top = 6
+Panel/styles/panel = SubResource("StyleBoxFlat_0o37o")

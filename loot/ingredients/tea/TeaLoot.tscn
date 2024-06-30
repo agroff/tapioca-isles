@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw0pohouw4h0i"]
+
+[ext_resource type="Script" path="res://loot/LootBody.gd" id="1_1c3qb"]
+[ext_resource type="PackedScene" uid="uid://c7vnl83bgo15s" path="res://loot/LootItem.tscn" id="1_63lht"]
+[ext_resource type="Resource" uid="uid://c2yjd14nx7fhp" path="res://items/ingredients/tea/TeaLeafItem.tres" id="2_8gwgv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xki4o"]
+height = 0.178617
+radius = 0.178621
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jha70"]
+albedo_color = Color(0.218519, 0.391385, 0.239401, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypgp5"]
+material = SubResource("StandardMaterial3D_jha70")
+size = Vector3(0.09, 0.01, 0.2)
+
+[node name="TeaLoot" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1c3qb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0783067, 0)
+shape = SubResource("CylinderShape3D_xki4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ypgp5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.925765, 0, -0.378099, 0, 1, 0, 0.378099, 0, 0.925765, 0.12693, 0, -0.041739)
+mesh = SubResource("BoxMesh_ypgp5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.932991, 0, 0.359899, 0, 1, 0, -0.359899, 0, 0.932991, -0.138189, 0, -0.0649552)
+mesh = SubResource("BoxMesh_ypgp5")
+
+[node name="LootItem" parent="." instance=ExtResource("1_63lht")]
+item = ExtResource("2_8gwgv")
+
+[connection signal="collected" from="LootItem" to="." method="_on_loot_item_collected"]

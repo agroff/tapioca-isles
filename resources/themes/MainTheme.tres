@@ -1,0 +1,78 @@
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://dcvb71511x1aw"]
+
+[ext_resource type="Texture2D" uid="uid://fjkolrn3410k" path="res://assets/images/buttons/button-dark.png" id="1_vcdtq"]
+[ext_resource type="Texture2D" uid="uid://bs4wthf6dai8a" path="res://assets/images/buttons/button-light.png" id="2_5khf0"]
+[ext_resource type="FontFile" uid="uid://ci6doc7l8p57e" path="res://assets/fonts/Voltaire-Regular.ttf" id="3_2rcyu"]
+[ext_resource type="Texture2D" uid="uid://bm7s34gl5idwu" path="res://assets/images/theme/checkbutton/checked-md.png" id="3_4v3v6"]
+[ext_resource type="Texture2D" uid="uid://olggy03071kf" path="res://assets/images/theme/checkbutton/unchecked-md.png" id="4_ovwti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xl37c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkmr4"]
+texture = ExtResource("1_vcdtq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtnf4"]
+texture = ExtResource("2_5khf0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnjkd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vf8km"]
+texture = ExtResource("1_vcdtq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kag3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qx4b1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce26s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1um1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2xq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yg4jq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbvsw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe8ov"]
+bg_color = Color(0.945098, 0.843137, 0.713726, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.647059, 0.278431, 0.65098, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.494118, 0.266667, 0.384314, 0)
+shadow_size = 5
+shadow_offset = Vector2(7, 7)
+
+[resource]
+default_font = ExtResource("3_2rcyu")
+default_font_size = 36
+Button/colors/font_color = Color(0.262745, 0.223529, 0.321569, 1)
+Button/colors/font_disabled_color = Color(0.262745, 0.223529, 0.321569, 0.580392)
+Button/colors/font_focus_color = Color(0.854902, 0.815686, 0.945098, 1)
+Button/colors/font_hover_color = Color(0.854902, 0.815686, 0.945098, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_xl37c")
+Button/styles/focus = SubResource("StyleBoxTexture_wkmr4")
+Button/styles/hover = SubResource("StyleBoxTexture_rtnf4")
+Button/styles/normal = SubResource("StyleBoxEmpty_gnjkd")
+Button/styles/pressed = SubResource("StyleBoxTexture_vf8km")
+CheckBox/icons/checked = null
+CheckBox/icons/unchecked = null
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_5kag3")
+CheckButton/icons/checked = ExtResource("3_4v3v6")
+CheckButton/icons/unchecked = ExtResource("4_ovwti")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_qx4b1")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_ce26s")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_h1um1")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_q2xq6")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_yg4jq")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_mbvsw")
+Label/colors/font_color = Color(0.262745, 0.223529, 0.321569, 1)
+OptionButton/colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+OptionButton/colors/font_focus_color = Color(0.266667, 0.266667, 0.266667, 1)
+OptionButton/colors/font_hover_color = Color(0.266667, 0.266667, 0.266667, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_xe8ov")

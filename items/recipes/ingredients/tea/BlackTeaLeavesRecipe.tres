@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=3 format=3 uid="uid://i45l704du0wd"]
+
+[ext_resource type="Script" path="res://items/Recipe.gd" id="1_qx2lu"]
+[ext_resource type="Resource" uid="uid://c2yjd14nx7fhp" path="res://items/ingredients/tea/TeaLeafItem.tres" id="1_vplmd"]
+
+[resource]
+script = ExtResource("1_qx2lu")
+name = "Black Tea Leaves Recipe"
+id = "RECIPE_TEA_LEAVES_BLACK"
+stationType = "TeaRoller"
+ingredient1 = ExtResource("1_vplmd")

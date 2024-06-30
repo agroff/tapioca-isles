@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7vnl83bgo15s"]
+
+[ext_resource type="Script" path="res://loot/LootItem.gd" id="1_clmr5"]
+[ext_resource type="AudioStream" uid="uid://chrsghj4trkvn" path="res://assets/audio/pickup.mp3" id="2_41grc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dhvua"]
+radius = 0.3
+
+[node name="LootItem" type="Area3D"]
+script = ExtResource("1_clmr5")
+
+[node name="CollectionSphere" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dhvua")
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_41grc")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

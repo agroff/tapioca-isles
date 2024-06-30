@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://e3apavx6lpsx"
+path="res://.godot/imported/9. Nature's Splendor.wav-fe283cb69491776c93805d05fba9cddb.sample"
+
+[deps]
+
+source_file="res://assets/music/9. Nature's Splendor.wav"
+dest_files=["res://.godot/imported/9. Nature's Splendor.wav-fe283cb69491776c93805d05fba9cddb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://cq3p3qx5qob58"]
+
+[ext_resource type="Shader" path="res://scenes/temp/cell-tree-converted.gdshader" id="1_iv052"]
+[ext_resource type="Texture2D" uid="uid://3l6wqeegyqn3" path="res://nature/tree_13_Texture_01.png" id="2_pwi8a"]
+
+[sub_resource type="Gradient" id="Gradient_fm0tc"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.381132, 0.777358)
+colors = PackedColorArray(0.183591, 0.18359, 0.18359, 1, 0.46, 0.46, 0.46, 1, 0.589135, 0.589081, 0.589094, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bn4li"]
+gradient = SubResource("Gradient_fm0tc")
+
+[sub_resource type="Gradient" id="Gradient_32ova"]
+offsets = PackedFloat32Array(0.256604, 0.65283)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ry5jn"]
+gradient = SubResource("Gradient_32ova")
+
+[resource]
+resource_name = "LP_4SeasonNature"
+render_priority = 0
+shader = ExtResource("1_iv052")
+shader_parameter/albedo = Color(0.864675, 0.864675, 0.864675, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color_gradient = SubResource("GradientTexture1D_bn4li")
+shader_parameter/fresnel_gradient = SubResource("GradientTexture1D_ry5jn")
+shader_parameter/texture_albedo = ExtResource("2_pwi8a")

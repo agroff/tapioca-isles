@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bwk2kgfrujsuc"]
+
+[ext_resource type="Script" path="res://items/Item.gd" id="1_wnadb"]
+[ext_resource type="Texture2D" uid="uid://dm10mwn1ubhp2" path="res://items/drinks/jasmine-tea.png" id="1_wvt8y"]
+
+[resource]
+script = ExtResource("1_wnadb")
+name = "Jasmine Tea"
+id = "DRINK_TEA_JASMINE"
+inventory_image = ExtResource("1_wvt8y")
+lootableScene = null

@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=4 uid="uid://chp7t4p3i285e"]
+
+[ext_resource type="Script" path="res://loot/LootBody.gd" id="1_1i8du"]
+[ext_resource type="Resource" uid="uid://bhnr4es2vr56e" path="res://items/ingredients/taro/TaroItem.tres" id="2_4cp32"]
+[ext_resource type="Texture2D" uid="uid://ch0s8aij1tqoi" path="res://loot/ingredients/taro/taro-slice_Texture_01.png" id="2_ap3s4"]
+[ext_resource type="PackedScene" uid="uid://c7vnl83bgo15s" path="res://loot/LootItem.tscn" id="4_a77vp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3obo3"]
+height = 0.288508
+radius = 0.422968
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0h8"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("2_ap3s4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kre8e"]
+_surfaces = [{
+"aabb": AABB(-0.285317, -0.0525, -0.3, 0.570634, 0.105, 0.6),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACAALAAkACAAKAAsACgANAAsACgAMAA0ADAAPAA0ADAAOAA8ADgARAA8ADgAQABEABQABAAMAAQARABMAEQANAA8ADQAJAAsACQAFAAcABQARAAEAEQAJAA0AEQAFAAkAEAATABEAEAASABMAEgABABMAEgAAAAEAEgACAAAAAgAGAAQABgAKAAgACgAOAAwADgASABAAEgAGAAIABgAOAAoABgASAA4A"),
+"lods": [0.064365, PackedByteArray("AAAFAAEAAAAEAAUABAAJAAUABAAKAAkACgANAAkACgAMAA0ADAARAA0ADAASABEABQARAAEAEQAFAAkAEQAJAA0AEgABABEAEgAAAAEAEgAEAAAABAASAAwABAAMAAoA"), 0.354287, PackedByteArray("AAAFAAEAAAAEAAUABAARAAUABAASABEABQARAAEAEgABABEAEgAAAAEAEgAEAAAA")],
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAABrPAAByGAAAGs///3IYAAD//wAAcVgAAP////9xWAAA//8AAI2nAAD/////jacAABrPAACM5wAAGs///4znAAD/fwAA//8AAP9//////wAA5DAAAIznAADkMP//jOcAAAAAAACNpwAAAAD//42nAAAAAAAAcVgAAAAA//9xWAAA5DAAAHIYAADkMP//chgAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_re6y6"]
+resource_name = "taro-slice_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.285317, -0.0525, -0.3, 0.570634, 0.105, 0.6),
+"attribute_data": PackedByteArray("gpyVHdMVqMFhyZUdgpwmBkkY3sBhySYGQBjewOTElR3kxJUdthqoweTEJgbkxCYGrRqowWfAlR1nwJUdNhy4w2fAJgZnwCYGLRy4w+u7lR3ru5UdNhxFxuu7JgbruyYGLRxFxm63lR1ut5UdthpVyG63JgZutyYG8bKVHa0aVcjxspUd8bImBkkYH8nxsiYGda6VHXWulR1AGB/Jda4mBnWuJgbcFVXI+KmVHfiplR3TFVXI+KkmBvipJgZcFEXGe6WVHXullR1TFEXGe6UmBnulJgZcFLjD/6CVHf+glR1TFLjD/6AmBv+gJgbcFajBZ8CVHWfAlR1nwCYGe6UmBnulJgZ7pSYG/6CVHf+glR1nwJUdZ8CVHWfAJgZutyYGbrcmBm63JgbxspUdda6VHXWulR11riYGe6UmBnulJgZ7pSYG/6CVHf+glR0="),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("AgAKAAUAAgAHAAoACAAQAAsACAANABAADgAXABEADgAUABcAEwAdABYAEwAaAB0AGQAjABwAGQAgACMAHgAoACEAHgAlACgAJAAuACcAJAArAC4AKgAzAC0AKgAwADMADwAEAAkABAA1ADsANQApAC8AKQAbACIAGwAPABUADwA1AAQANQAbACkANQAPABsAMQA5ADQAMQA2ADkANwADADoANwAAAAMAOAAGAAEABgASAAwAEgAfABgAHwAsACYALAA4ADIAOAASAAYAEgAsAB8AEgA4ACwA"),
+"lods": [0.064365, PackedByteArray("AgAQAAUAAgBEABAARABHAEYARQBKAEgAHgBNAEkAHgBLAE0ASwBOACcATABRAE8ADwA1AAQANQAPABsANQAbACkAUgADAFAAUgAAAAMAOAAMAAEADAA4ACYADAAmAB8A"), 0.354287, PackedByteArray("AgAQAAUAAgANABAAPAA/AD4APQBCAEAADwA1AAQAQwADAEEAQwAAAAMAOAAMAAEA")],
+"material": SubResource("StandardMaterial3D_pk0h8"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 83,
+"vertex_data": PackedByteArray("/38AAAAAMvP/fwAAAAAaPP9/AAAAADLz/3///wAAMvP/f///AAD/v/9///8AADLzGs8AAHIYGjwazwAAchgy8xrPAAByGJjZGs///3IY/78az///chgy8xrP//9yGJjZ//8AAHFYGjz//wAAcViY2f//AABxWP+//////3FY/7//////cViY2f////9xWP+///8AAI2nGjz//wAAjadlpv//AACNp/+//////42n/7//////jadlpv////+Np/+/Gs8AAIznGjwazwAAjOfLjBrPAACM52WmGs///4zn/78az///jOfLjBrP//+M52Wm/38AAP//y4z/fwAA//8aPP9/AAD//8uM/3//////y4z/f///////v/9//////8uM5DAAAIznZabkMAAAjOfLjOQwAACM5xo85DD//4znZabkMP//jOfLjOQw//+M5/+/AAAAAI2n/78AAAAAjadlpgAAAACNpxo8AAD//42n/78AAP//jadlpgAA//+Np/+/AAAAAHFY/78AAAAAcViY2QAAAABxWBo8AAD//3FY/78AAP//cViY2QAA//9xWP+/5DAAAHIYmNnkMAAAchgy8+QwAAByGBo85DD//3IYmNnkMP//chgy8+Qw//9yGP+///8AAHFY2Of//wAAcVhd5f////9xWIO7AAD//3FY16oAAP//cVhU1QAA//9xWE7P5DAAAHIYXeXkMAAAchgJ4v//AABxWBbU//8AAHFYHeX/////cVj3yxrP//+M5/yoGs///4znP70az///jOf/jP9/AAD//+e85DAAAIznjaDkMAAAjOeQyOQw//+M52ycAAD//3FYlrUAAP//cVjP1AAA//9xWDHP5DAAAHIYCOTkMAAAchgP4v9///81GWqy/38AAP9///////9//38AADUZabL/fwAA/38AAP7//3//fwAA/38AADUZabL/fwAA/38AAP7//3//fwAA/38AADUZabL/fwAA/38AAP7//3//fwAA/38AADUZabL/fwAA/38AAP7//3//fwAA/38AAP9///81GWmy/38AAP9///////9//38AAP9/////f///NRlpsv9/////f////v//f/9/////f///NRlqsv9/////f////v//f/9/////f///NRlqsv9/////f////v//f/9/////f///NRlqsv9/////f////v//f/9/AAACZv5M/38AAP9///+qKlTVBorK5wEzAuaugHX9/38AAA9m2kz/fwAA/38AAO8fRm9atQsu5Q2Cnf9////CIOfA5JUN3f9///8ELYrWsYat7xE2CudcgKP+")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kre8e")
+
+[node name="TaroLoot" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1i8du")
+item = ExtResource("2_4cp32")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0984695, 0)
+shape = SubResource("CylinderShape3D_3obo3")
+
+[node name="taro-slice" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000126239, 0)
+
+[node name="Taro" type="MeshInstance3D" parent="taro-slice"]
+mesh = SubResource("ArrayMesh_re6y6")
+skeleton = NodePath("")
+
+[node name="LootItem" parent="." instance=ExtResource("4_a77vp")]
+item = ExtResource("2_4cp32")
+
+[connection signal="collected" from="LootItem" to="." method="_on_loot_item_collected"]

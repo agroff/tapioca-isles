@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2pabud8mp1im"]
+
+[ext_resource type="Script" path="res://loot/LootManager.gd" id="1_415qo"]
+[ext_resource type="AudioStream" uid="uid://y6buy1iacjrc" path="res://assets/audio/touch2.wav" id="3_txrtj"]
+
+[node name="LootManager" type="Node3D"]
+script = ExtResource("1_415qo")
+
+[node name="LootPool" type="Node3D" parent="."]
+
+[node name="SpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_txrtj")
+bus = &"SFX"

@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfxefcx6qhu4x"]
+
+[ext_resource type="Script" path="res://hud/inv_item.gd" id="1_5lscb"]
+[ext_resource type="Texture2D" uid="uid://c07qq5rwolkkr" path="res://items/ingredients/taro/taro-inv-image.png" id="1_uojg3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02gle"]
+bg_color = Color(0.392882, 0.433213, 0.508719, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.392157, 0.431373, 0.509804, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m040"]
+bg_color = Color(0.214777, 0.249447, 0.315349, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="InvItem" type="Panel"]
+custom_minimum_size = Vector2(250, 80)
+theme_override_styles/panel = SubResource("StyleBoxFlat_02gle")
+script = ExtResource("1_5lscb")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -14.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBox"]
+custom_minimum_size = Vector2(59, 59)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2m040")
+
+[node name="Icon" type="TextureRect" parent="HBox/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uojg3")
+expand_mode = 3
+
+[node name="QuantityLabel" type="Label" parent="HBox/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.159969, 0.18843, 0.239041, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "1 "
+horizontal_alignment = 2
+
+[node name="NameLabel" type="Label" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.159969, 0.18843, 0.239041, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "INV_TARO"
+horizontal_alignment = 1

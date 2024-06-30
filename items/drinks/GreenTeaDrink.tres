@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bw3co0sxrtqyx"]
+
+[ext_resource type="Texture2D" uid="uid://djofrbkgrk66k" path="res://items/drinks/green-tea.png" id="1_2yedm"]
+[ext_resource type="Script" path="res://items/Item.gd" id="1_e48a8"]
+[ext_resource type="Resource" uid="uid://dmv721ouax3vc" path="res://items/recipes/GreenTeaRecipe.tres" id="2_l37nm"]
+
+[resource]
+script = ExtResource("1_e48a8")
+name = "Green Tea"
+id = "DRINK_TEA_GREEN"
+inventory_image = ExtResource("1_2yedm")
+recipe = ExtResource("2_l37nm")
+lootableScene = null

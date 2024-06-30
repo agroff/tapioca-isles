@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqsrtvunwqnoq"]
+
+[ext_resource type="Texture2D" uid="uid://chusrecfgthjw" path="res://items/ingredients/tea/tea-leaves.png" id="1_0lt1r"]
+[ext_resource type="Script" path="res://stations/ingredient_item.gd" id="1_offpg"]
+
+[node name="IngredientItem" type="HBoxContainer"]
+theme_override_constants/separation = 9
+script = ExtResource("1_offpg")
+
+[node name="Available" type="Label" parent="."]
+layout_mode = 2
+text = "12"
+
+[node name="Slash" type="Label" parent="."]
+layout_mode = 2
+text = "/"
+
+[node name="Needed" type="Label" parent="."]
+layout_mode = 2
+text = "2"
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_0lt1r")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+text = "Tea Leaves"

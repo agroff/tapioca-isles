@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://jpmyqb4k37vm"]
+
+[ext_resource type="Theme" uid="uid://b05pmsvoieugv" path="res://resources/themes/DarkTheme.tres" id="1_k3sfe"]
+[ext_resource type="Script" path="res://screens/management/SceneManager.gd" id="1_o46rf"]
+[ext_resource type="AudioStream" uid="uid://qmggdgg21ktg" path="res://assets/music/1. Humble Village.wav" id="2_kcowo"]
+[ext_resource type="AudioStream" uid="uid://2h5dxte6jffd" path="res://assets/music/2. Venturing Out.wav" id="3_dtnfq"]
+[ext_resource type="AudioStream" uid="uid://btd0h04d4x2xl" path="res://assets/music/3. A Curiosity.wav" id="4_0sgqq"]
+[ext_resource type="AudioStream" uid="uid://whb6fnw4etxa" path="res://assets/music/4. The Challenge.wav" id="5_5kfqx"]
+[ext_resource type="AudioStream" uid="uid://c7r5ob6ecy5ak" path="res://assets/music/8. The Endless Horizon.wav" id="6_ygg6i"]
+[ext_resource type="AudioStream" uid="uid://e3apavx6lpsx" path="res://assets/music/9. Nature's Splendor.wav" id="7_7r4on"]
+[ext_resource type="PackedScene" uid="uid://dhdqynk0665ii" path="res://screens/LoadingScreen.tscn" id="9_ch40d"]
+[ext_resource type="PackedScene" uid="uid://r8f1j5ohhm1k" path="res://screens/modal/Settings.tscn" id="10_pu6pd"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_m6si3"]
+clip_count = 6
+clip_0/name = &"2. Venturing Out"
+clip_0/stream = ExtResource("3_dtnfq")
+clip_0/auto_advance = 1
+clip_0/next_clip = 2
+clip_1/name = &"1. Humble Village"
+clip_1/stream = ExtResource("2_kcowo")
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
+clip_2/name = &"3. A Curiosity"
+clip_2/stream = ExtResource("4_0sgqq")
+clip_2/auto_advance = 1
+clip_2/next_clip = 1
+clip_3/name = &"4. The Challenge"
+clip_3/stream = ExtResource("5_5kfqx")
+clip_3/auto_advance = 0
+clip_4/name = &"8. The Endless Horizon"
+clip_4/stream = ExtResource("6_ygg6i")
+clip_4/auto_advance = 0
+clip_5/name = &"9. Nature\'s Splendor"
+clip_5/stream = ExtResource("7_7r4on")
+clip_5/auto_advance = 0
+_transitions = {
+Vector2i(0, 2): {
+"fade_beats": 4,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 1
+},
+Vector2i(1, 2): {
+"fade_beats": 4,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 1
+},
+Vector2i(2, 1): {
+"fade_beats": 4,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 1
+}
+}
+
+[node name="SceneManager" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k3sfe")
+script = ExtResource("1_o46rf")
+
+[node name="MusicManager" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_m6si3")
+autoplay = true
+bus = &"Music"
+
+[node name="LoadingScreen" parent="." instance=ExtResource("9_ch40d")]
+
+[node name="Settings" parent="." instance=ExtResource("10_pu6pd")]

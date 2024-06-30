@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=3 format=3 uid="uid://dmv721ouax3vc"]
+
+[ext_resource type="Resource" uid="uid://c2yjd14nx7fhp" path="res://items/ingredients/tea/TeaLeafItem.tres" id="1_3jwff"]
+[ext_resource type="Script" path="res://items/Recipe.gd" id="1_xe10q"]
+
+[resource]
+script = ExtResource("1_xe10q")
+name = "Green Tea Recipe"
+id = "RECIPE_TEA_GREEN"
+stationType = "TeaPot"
+ingredient1 = ExtResource("1_3jwff")

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bnv61gfxxx3rl"
+
+[deps]
+
+files=["res://resources/localization/pioca-isles-localization.en.translation", "res://resources/localization/pioca-isles-localization.es.translation", "res://resources/localization/pioca-isles-localization.ko.translation"]
+
+source_file="res://resources/localization/pioca-isles-localization.csv"
+dest_files=["res://resources/localization/pioca-isles-localization.en.translation", "res://resources/localization/pioca-isles-localization.es.translation", "res://resources/localization/pioca-isles-localization.ko.translation"]
+
+[params]
+
+compress=true
+delimiter=0

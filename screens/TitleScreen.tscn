@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://chgqbvtx7s71a"]
+
+[ext_resource type="FontFile" uid="uid://cl2nleoy27fpp" path="res://assets/fonts/GasoekOne-Regular.ttf" id="1_47fcm"]
+[ext_resource type="Theme" uid="uid://b05pmsvoieugv" path="res://resources/themes/DarkTheme.tres" id="1_s5p1i"]
+[ext_resource type="Script" path="res://screens/TitleScreen.gd" id="2_8jxk7"]
+[ext_resource type="Texture2D" uid="uid://cgy2aj3k80emg" path="res://assets/images/title/title_characters.png" id="2_gcqp3"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s5p1i")
+script = ExtResource("2_8jxk7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0.568627, 0, 1)
+
+[node name="Title" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -692.0
+offset_top = 126.0
+offset_right = 692.0
+offset_bottom = 407.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.65625, 0.453125, 0.90625, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 35
+theme_override_fonts/font = ExtResource("1_47fcm")
+theme_override_font_sizes/font_size = 191
+text = "GAME_NAME"
+horizontal_alignment = 1
+
+[node name="CharacterImage" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -951.0
+offset_top = -473.0
+offset_bottom = 634.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_gcqp3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeftSide" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="ColorRect/LeftSide"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -144.0
+offset_right = 150.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGameBtn" type="Button" parent="ColorRect/LeftSide/Menu"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "TITLE_NEW"
+
+[node name="ContinueBtn" type="Button" parent="ColorRect/LeftSide/Menu"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "TITLE_CONTINUE"
+
+[node name="LoadGameBtn" type="Button" parent="ColorRect/LeftSide/Menu"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "TITLE_LOAD"
+
+[node name="SettingsBtn" type="Button" parent="ColorRect/LeftSide/Menu"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "TITLE_SETTINGS"
+
+[connection signal="pressed" from="ColorRect/LeftSide/Menu/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="ColorRect/LeftSide/Menu/SettingsBtn" to="." method="_on_settings_btn_pressed"]

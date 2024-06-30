@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsifb2t6bioot"]
+
+[ext_resource type="Texture2D" uid="uid://c2h8yq665r7tf" path="res://assets/particles/circle.png" id="1_lefrp"]
+
+[sub_resource type="Curve" id="Curve_53b3v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.67128, 0.890603), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ne0mh"]
+curve = SubResource("Curve_53b3v")
+
+[sub_resource type="Gradient" id="Gradient_lkykm"]
+colors = PackedColorArray(0.812746, 0, 0.1039, 1, 0.883328, 0.41585, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wniwu"]
+gradient = SubResource("Gradient_lkykm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srkjk"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.5
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 0.499998
+color_ramp = SubResource("GradientTexture1D_wniwu")
+alpha_curve = SubResource("CurveTexture_ne0mh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jv5ko"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.568627)
+albedo_texture = ExtResource("1_lefrp")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_p21o5"]
+material = SubResource("StandardMaterial3D_jv5ko")
+size = Vector2(0.1, 0.1)
+
+[node name="FireParticles" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0477849, 0)
+amount = 110
+lifetime = 0.54
+explosiveness = 0.15
+process_material = SubResource("ParticleProcessMaterial_srkjk")
+draw_pass_1 = SubResource("QuadMesh_p21o5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.576359, 0.0833913, 0.115815, 1)
