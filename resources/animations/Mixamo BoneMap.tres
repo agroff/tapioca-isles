@@ -4,6 +4,7 @@
 
 [resource]
 profile = SubResource("SkeletonProfileHumanoid_yo0wk")
+bonemap = null
 bone_map/Root = &""
 bone_map/Hips = &"mixamorig_Hips"
 bone_map/Spine = &"mixamorig_Spine"

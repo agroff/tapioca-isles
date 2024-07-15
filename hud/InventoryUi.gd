@@ -14,12 +14,12 @@ func updateInventory() -> void:
 	
 	for n in inv_item_container.get_children():
 		inv_item_container.remove_child(n)
-		n.queue_free()
+		n.queue_free()   
 	
-	for item in items:
+	for item in items:   
 		var itemNode = inv_item.instantiate()
-		print(item)
-		itemNode.setData(item.item, item.quantity)
+		print(item) 
+		itemNode.setData(item .item, item.quantity)   
 		inv_item_container.add_child(itemNode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

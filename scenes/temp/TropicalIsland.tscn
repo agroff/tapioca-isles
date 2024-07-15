@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=4 uid="uid://b03seab2vhvxd"]
+[gd_scene load_steps=124 format=4 uid="uid://b03seab2vhvxd"]
 
 [ext_resource type="Texture2D" uid="uid://ddtlgh88r453u" path="res://scenes/temp/tropical-island_Island Base Color.png" id="1_0japm"]
 [ext_resource type="Texture2D" uid="uid://cti3wi8jbkm27" path="res://scenes/temp/tropical-island_House Base Color.png" id="2_fq2be"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bidqbrhkyqcpd" path="res://stations/hand_mill.tscn" id="11_bdlno"]
 [ext_resource type="PackedScene" uid="uid://dpi1brmc37b8c" path="res://stations/teapot.tscn" id="12_1q3so"]
 [ext_resource type="PackedScene" uid="uid://bygj03gw832gr" path="res://stations/tea_roller.tscn" id="13_wkeen"]
+[ext_resource type="PackedScene" uid="uid://bdqocr6lxhbpq" path="res://structures/portals/Portal.tscn" id="14_trufb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip237"]
 resource_name = "Material.002"
@@ -1119,6 +1120,9 @@ sky_material = SubResource("PanoramaSkyMaterial_5cbgr")
 [sub_resource type="Environment" id="Environment_qq23k"]
 background_mode = 2
 sky = SubResource("Sky_enklh")
+ambient_light_color = Color(0.984983, 0.988799, 0.977201, 1)
+ambient_light_sky_contribution = 0.43
+ambient_light_energy = 0.82
 tonemap_mode = 2
 glow_enabled = true
 
@@ -1487,6 +1491,7 @@ environment = SubResource("Environment_qq23k")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_color = Color(0.917698, 0.912121, 0.739357, 1)
+light_energy = 0.27
 shadow_enabled = true
 
 [node name="Grass9" type="MultiMeshInstance3D" parent="."]
@@ -1506,3 +1511,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6438, 0.970911, 3.62137)
 
 [node name="TeaRoller" parent="." instance=ExtResource("13_wkeen")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0714, 1.3281, 1.8161)
+
+[node name="Portal" parent="." instance=ExtResource("14_trufb")]
+transform = Transform3D(-0.504566, 0.0902482, -0.858643, 0.0612899, 0.995757, 0.0686438, 0.861195, -0.0179908, -0.507957, 13.933, 10.589, -21.8213)
+teleport_to = "res://scenes/temp/HomeIslandTest.tscn"

@@ -23,8 +23,9 @@ Inventory="*res://items/Inventory.gd"
 
 [display]
 
-window/size/viewport_width=2304
-window/size/viewport_height=1296
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
 
 [editor]
 
@@ -105,3 +106,7 @@ menu_item_4={
 [internationalization]
 
 locale/translations=PackedStringArray("res://resources/localization/pioca-isles-localization.en.translation", "res://resources/localization/pioca-isles-localization.es.translation", "res://resources/localization/pioca-isles-localization.ko.translation")
+
+[rendering]
+
+anti_aliasing/quality/use_taa=true

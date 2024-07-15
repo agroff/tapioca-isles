@@ -1,0 +1,68 @@
+[gd_resource type="BehaviorTree" load_steps=20 format=3 uid="uid://b8ab6v357xmk7"]
+
+[ext_resource type="Script" path="res://ai/tasks/choose_position.gd" id="1_jx2jp"]
+[ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="1_q8mrk"]
+[ext_resource type="Script" path="res://ai/tasks/play_animation.gd" id="2_43ch1"]
+[ext_resource type="Script" path="res://ai/tasks/move_to_position.gd" id="2_b3qi5"]
+[ext_resource type="Script" path="res://ai/tasks/target_player.gd" id="2_im8wv"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_rvyla"]
+
+[sub_resource type="BTAction" id="BTAction_en8fx"]
+script = ExtResource("2_im8wv")
+target_var = &"target"
+
+[sub_resource type="BTCondition" id="BTCondition_f3clv"]
+script = ExtResource("1_q8mrk")
+distance_min = 0.0
+distance_max = 10.0
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_6daf7"]
+script = ExtResource("2_43ch1")
+animation_name = "Brute-library/attack 360 high"
+
+[sub_resource type="BTWait" id="BTWait_s6ff3"]
+duration = 2.0
+
+[sub_resource type="BTSequence" id="BTSequence_u0fi5"]
+custom_name = "Attack"
+children = [SubResource("BTAction_en8fx"), SubResource("BTCondition_f3clv"), SubResource("BTAction_6daf7"), SubResource("BTWait_s6ff3")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_njic4"]
+text = "Idle sequence"
+
+[sub_resource type="BTAction" id="BTAction_7vnlk"]
+script = ExtResource("2_43ch1")
+animation_name = "Brute-library/idle standing"
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_qrjth"]
+min_duration = 0.0
+max_duration = 10.0
+
+[sub_resource type="BTAction" id="BTAction_l7kak"]
+script = ExtResource("1_jx2jp")
+range_min = 3.0
+range_max = 9.0
+position_var = &"pos"
+
+[sub_resource type="BTAction" id="BTAction_if1ob"]
+script = ExtResource("2_43ch1")
+animation_name = "Brute-library/walk forward"
+
+[sub_resource type="BTAction" id="BTAction_335el"]
+script = ExtResource("2_b3qi5")
+position_var = &"pos"
+speed_var = 2.0
+tolerance = 1.5
+
+[sub_resource type="BTSequence" id="BTSequence_3d31k"]
+custom_name = "Idle"
+children = [SubResource("BTConsolePrint_njic4"), SubResource("BTAction_7vnlk"), SubResource("BTRandomWait_qrjth"), SubResource("BTAction_l7kak"), SubResource("BTAction_if1ob"), SubResource("BTAction_335el")]
+
+[sub_resource type="BTSelector" id="BTSelector_u3wdk"]
+children = [SubResource("BTSequence_u0fi5"), SubResource("BTSequence_3d31k")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_rvyla")
+root_task = SubResource("BTSelector_u3wdk")

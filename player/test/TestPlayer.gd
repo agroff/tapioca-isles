@@ -1,8 +1,15 @@
+class_name Player
 extends CharacterBody3D
+
+signal char_health(health: float)
+
+@export var health := 200
+var current_health = 100
 
 @onready var animation_player: AnimationPlayer = $knight/AnimationPlayer
 #@onready var animation_player: AnimationPlayer = $player/AnimationPlayer
 @onready var weapon_slot: BoneAttachment3D = $knight/Armature/GeneralSkeleton/WeaponSlot
+@onready var walk_sound: AudioStreamPlayer = $WalkSound
 
 const run_anim = "knight/run"
 const attack_anim = "knight/attack slash"
@@ -27,6 +34,7 @@ var dodging := false
 func _ready() -> void:
 	SceneManager.settings.settings_closed.connect(settings_closed)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	current_health = health
 	
 
 func settings_closed():
@@ -35,8 +43,8 @@ func settings_closed():
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		pass
-		#velocity.y -= gravity * delta
+		#pass
+		velocity.y -= gravity * delta
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -74,7 +82,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("dodge") and is_on_floor():
 		dodging = true
-		var dir = transform.basis * Vector3(0,0,20)
+		var dir = transform.basis * Vector3(0,0,40)
 		velocity.x = dir.x
 		velocity.z = dir.z
 		velocity.y = 2
@@ -84,16 +92,20 @@ func _physics_process(delta: float) -> void:
 	#print("Y: " + str(input_dir.y))
 	# Animation
 	if dodging:
+		walk_sound.stop()
 		animation_player.play("knight/jump2 short", 0.2)
 	elif attacking:
+		walk_sound.stop()
 		animation_player.speed_scale = 1.8
 		if is_backswing:
 			animation_player.play("knight/attack backhand", 1)
 		else:
 			animation_player.play(attack_anim, 1)
 	elif not is_on_floor(): 
+		walk_sound.stop()
 		animation_player.play("knight/jump")
 	elif velocity.x == 0:
+		walk_sound.stop()
 		animation_player.speed_scale = 1
 		if mouse_motion.x > 0:
 			animation_player.play("knight/turn right", 0.1)
@@ -102,6 +114,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			animation_player.play(idle_anim, 0.2)
 	else:
+		if not walk_sound.playing: walk_sound.play()
 		animation_player.speed_scale = 0.8
 		if input_dir.y > 0.5:
 			animation_player.play("knight/run backward")
@@ -130,7 +143,10 @@ func handle_camera_rotation() -> void:
 #	rotation_degrees.x = clampf(rotation_degrees.x, -90.0, 90.0)
 	mouse_motion = Vector2.ZERO
 
-
+func damage(dmg: float) -> void:
+	current_health -= dmg
+	emit_signal("char_health", current_health)
+	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "knight/jump2 short": dodging = false
 	if anim_name == "knight/attack backhand": attacking = false

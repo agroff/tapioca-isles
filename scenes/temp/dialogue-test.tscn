@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj1baurvwe8vm"]
+
+[ext_resource type="Script" path="res://scenes/temp/dialogue_test.gd" id="1_blgcx"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ao6nu"]
+
+[node name="Dialogue-test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blgcx")
+
+[node name="Player" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_ao6nu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 196
+text = "---"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = 197.0
+offset_right = 222.0
+offset_bottom = 465.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 71
+text = "Sound On!
+Demo of generating speech 
+beeps from strings"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

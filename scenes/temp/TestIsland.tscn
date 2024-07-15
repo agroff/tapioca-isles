@@ -471,31 +471,49 @@ skeleton = NodePath("")
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="SugarEnemy" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 10.5202, 5.91398, -20.837)
-
-[node name="SugarEnemy3" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.951846, 0, -0.306576, 0, 1, 0, 0.306576, 0, 0.951846, 13.3828, 5.91398, -22.4924)
-
-[node name="SugarEnemy4" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.951846, 0, -0.306576, 0, 1, 0, 0.306576, 0, 0.951846, 13.3828, 5.91398, -39.2709)
-
-[node name="SugarEnemy5" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.979318, 0, 0.202326, 0, 1, 0, -0.202326, 0, 0.979318, -1.03053, 5.91398, -39.2709)
-
-[node name="SugarEnemy6" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.979318, 0, 0.202326, 0, 1, 0, -0.202326, 0, 0.979318, -1.03053, 5.91398, -60.0306)
-
-[node name="SugarEnemy7" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.5425, 0, -0.840056, 0, 1, 0, 0.840056, 0, 0.5425, 26.0949, 5.91398, -60.0306)
-
-[node name="SugarEnemy8" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.5425, 0, -0.840056, 0, 1, 0, 0.840056, 0, 0.5425, 28.2934, 5.91398, -33.5926)
-
-[node name="SugarEnemy9" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.842744, 0, -0.538315, 0, 1, 0, 0.538315, 0, 0.842744, 35.2726, 5.91398, -40.1208)
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 10.3499, 5.91398, -20.837)
 
 [node name="SugarEnemy2" parent="Enemies" instance=ExtResource("5_6atjt")]
-transform = Transform3D(0.837461, 0, -0.546497, 0, 1, 0, 0.546497, 0, 0.837461, 16.1681, 5.91398, -19.5422)
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 16.6468, 5.91398, -20.837)
+
+[node name="SugarEnemy3" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 23.4714, 5.91398, -20.837)
+
+[node name="SugarEnemy4" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 33.2306, 5.91398, -20.837)
+
+[node name="SugarEnemy5" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 38.8867, 5.37807, -20.837)
+
+[node name="SugarEnemy6" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 10.3499, 5.91398, -35.4652)
+
+[node name="SugarEnemy7" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 16.6468, 5.91398, -35.4652)
+
+[node name="SugarEnemy8" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 23.4714, 5.91398, -35.4652)
+
+[node name="SugarEnemy9" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 33.2306, 5.91398, -35.4652)
+
+[node name="SugarEnemy10" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 38.8867, 5.37807, -35.4652)
+
+[node name="SugarEnemy11" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 10.3499, 5.91398, -54.3988)
+
+[node name="SugarEnemy12" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 16.6468, 5.91398, -54.3988)
+
+[node name="SugarEnemy13" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 23.4714, 5.91398, -54.3988)
+
+[node name="SugarEnemy14" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 33.2306, 5.91398, -54.3988)
+
+[node name="SugarEnemy15" parent="Enemies" instance=ExtResource("5_6atjt")]
+transform = Transform3D(0.946773, 0, 0.321902, 0, 1, 0, -0.321902, 0, 0.946773, 38.8867, 5.37807, -54.3988)
 
 [node name="Grass" type="Node3D" parent="."]
 

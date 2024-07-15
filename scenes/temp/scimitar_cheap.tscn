@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qmq21ybs7sfc"]
+[gd_scene load_steps=7 format=3 uid="uid://qmq21ybs7sfc"]
 
 [ext_resource type="PackedScene" uid="uid://ca8b1ym44ikmj" path="res://weapons/scimitar-cheap.glb" id="1_ypune"]
 [ext_resource type="Script" path="res://scenes/temp/weapon.gd" id="2_ewli4"]
 [ext_resource type="Script" path="res://scenes/temp/scimitar_cheap.gd" id="2_nc8b4"]
+[ext_resource type="AudioStream" uid="uid://bvcs7gb8xibl8" path="res://assets/audio/sfx/weapons/sword/whoosh_c.wav" id="4_ei81l"]
+[ext_resource type="AudioStream" uid="uid://7aeoui0fapll" path="res://assets/audio/sfx/weapons/sword/whoosh_d.wav" id="5_aw4nm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rti4f"]
 size = Vector3(0.563477, 2.36261, 0.237305)
@@ -16,6 +18,14 @@ script = ExtResource("2_nc8b4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3d" index="0"]
 transform = Transform3D(0.999808, -0.0196162, 0, 0.0196162, 0.999808, 0, 0, 0, 1, -0.0671916, 2.40717, 0.0013113)
 shape = SubResource("BoxShape3D_rti4f")
+
+[node name="WhooshA" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_ei81l")
+bus = &"SFX"
+
+[node name="WhooshB" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("5_aw4nm")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area3d" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3d" to="." method="_on_area_3d_area_exited"]
